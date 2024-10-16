@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Tecnología</title>
+    <!-- Referencias a los archivos CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado con estilo de Bootstrap -->
+    <header class="bg-dark text-white py-4">
+        <div class="container">
+            <!-- Encabezado centrado -->
+            <h1 class="text-center">Tienda de Tecnología</h1>
+        </div>
+    </header>
+    <div class="container mt-4">
+        <!-- Barra de navegación con estilo de Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="navbar-nav mr-auto">
+                <!-- Enlaces de navegación con estilo de Bootstrap -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ayuda">Ayuda</a>
+                </li>
+            </ul>
+        </nav>
+        <section id="inicio" class="mt-4">
+            <div class="jumbotron">
+                <!-- Título con estilo de Bootstrap -->
+                <h2 class="display-4">Bienvenido a nuestra tienda de tecnología</h2>
+                <p class="lead">Los mejores productos de tecnología al mejor precio.</p>
+                <!-- Botón con estilo de Bootstrap -->
+                <a class="btn btn-primary btn-lg" href="#productos" role="button">Ver nuestros productos</a>
+            </div>
+        </section>
+    </div>
+    <div class="container mt-4" id="productos">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Tarjeta de producto con estilo de Bootstrap -->
+                <div class="card mb-3">
+                    <img src="producto1.jpg" class="card-img-top" alt="Laptop UltraX">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop UltraX</h5>
+                        <!-- Lista con estilo de Bootstrap -->
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Procesador: Intel Core i7-11XXX</li>
+                            <li class="list-group-item">Memoria RAM: 16GB DDR4</li>
+                            <li class="list-group-item">Almacenamiento: 512GB SSD</li>
+                            <li class="list-group-item">Pantalla: 15.6" Full HD</li>
+                        </ul>
+                        <p class="card-text">Precio: $20000 Mx</p>
+                        <!-- Botón con estilo de Bootstrap -->
+                        <a href="#" class="btn btn-success">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <img src="producto2.jpg" class="card-img-top" alt="Smartphone TechX">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop Razer TechX</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Procesador: Intel Core i5-10th</li>
+                            <li class="list-group-item">Memoria RAM: 64GB</li>
+                            <li class="list-group-item">Almacenamiento: 1 TB</li>
+                            <li class="list-group-item">Pantalla: 16.5" OLED</li>
+                        </ul>
+                        <p class="card-text">Precio: $100000 Mx</p>
+                        <a href="#" class="btn btn-success">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4" id="contacto">
+        <h2>¿Interesado en recibir ofertas especiales?</h2>
+        <!-- Formulario con estilo de Bootstrap -->
+            <form action="procesar_contacto.php" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre del cliente:</label>
+                <!-- Campo de entrada para ingresar el nombre del cliente -->
+                <input type="text" class="form-control" id="nobre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email"> correo electrónico:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <input type="hidden" name="accion" value="insertar">
+            <button type="submit" class="btn btn-primary">enviar</button>
+        </form>
+<!--       <form action="procesar_contacto.php" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">Comentarios:</label>
+                <textarea class="form-control" id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" name="accion" value="insertar">Enviar</button>
+        </form>-->
+        <!-- Opción para actualizar correo -->
+        <form action="procesar_contacto.php" method="post">
+            <div class="form-group">
+                <label for="nombreActualizar">Nombre del cliente a actualizar:</label>
+                <!-- Campo de entrada para ingresar el nombre del cliente -->
+                <input type="text" class="form-control" id="nombreActualizar" name="nombreActualizar" required>
+            </div>
+            <div class="form-group">
+                <label for="nuevoCorreoActualizar">Nuevo correo electrónico:</label>
+                <input type="email" class="form-control" id="nuevoCorreoActualizar" name="nuevoCorreoActualizar" required>
+            </div>
+            <input type="hidden" name="accion" value="actualizarPorNombre">
+            <button type="submit" class="btn btn-primary">Actualizar Correo por Nombre</button>
+        </form>
+        <!-- Opción para eliminar contacto por nombre -->
+        <form action="procesar_contacto.php" method="post">
+            <div class="form-group">
+                <label for="nombreEliminar">Nombre del cliente a eliminar:</label>
+                <input type="text" class="form-control" id="nombreEliminar" name="nombreEliminar" required>
+            </div>
+            <input type="hidden" name="accion" value="eliminarPorNombre">
+            <button type="submit" class="btn btn-danger">Eliminar Contacto por Nombre</button>
+        </form>
+    </div>
+
+    <div class="container mt-4" id="busqueda">
+        <h2>¿Buscando algún producto en particular?</h2>
+        <form action="buscar_productos.php" method="get">
+            <div class="form-group">
+                <label for="busqueda">Ingrese palabras clave:</label>
+                <!-- Campo de entrada con estilo de Bootstrap -->
+                <input type="text" class="form-control" id="busqueda" name="q" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+
+    <div class="container mt-4" id="ayuda">
+        <h2>¿Necesitas ayuda?</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>País</th>
+                    <th>Teléfono</th>
+                    <th>Horario de Atención</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>México</td>
+                    <td>55-1234-5678</td>
+                    <td>Lunes a Viernes: 9:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>EUA</td>
+                    <td>1-800-123-4567</td>
+                    <td>Lunes a Viernes: 8:00 - 20:00</td>
+                </tr>
+                <tr>
+                    <td>Canadá</td>
+                    <td>1-888-555-1234</td>
+                    <td>Lunes a Sábado: 10:00 - 17:00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Email: contacto@tiendatecnologia.com</p>
+    </div>
+    <!-- Sección para el conversor de moneda -->
+    <div class="container mt-4">
+        <h2 class="text-center">Conversor de Moneda</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="cantidadPesos">Cantidad en pesos mexicanos:</label>
+                    <input type="number" id="cantidadPesos" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <button onclick="convertirMoneda()" class="btn btn-primary btn-block">Convertir</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="contador-visitas">0 visitas</div>
+    <div id="contador-tiempo">0 segundos en la página</div>
+
+    <!-- Para simular aviso de compra exitosa (es simulada la compra) -->
+    <script src="compra_exitosa.js"></script>
+    <script src="conversor_moneda.js" defer></script> <!-- defer para que se sincronice con la pagina-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener el contador de visitas del almacenamiento local
+            let visitas = localStorage.getItem("visitas");
+            if (visitas === null) {
+                // Si no existe, inicializar el contador a 0
+                visitas = 0;
+            } else {
+                // Si existe, convertirlo a número
+                visitas = parseInt(visitas);
+            }
+
+            // Incrementar el contador de visitas
+            visitas++;
+
+            // Mostrar el contador de visitas en la página
+            document.getElementById("contador-visitas").textContent = visitas + " visitas";
+
+            // Guardar el contador de visitas actualizado en el almacenamiento local
+            localStorage.setItem("visitas", visitas);
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let tiempoInicio = Date.now(); // Obtener el tiempo actual en milisegundos
+
+            // Actualizar el contador de tiempo cada segundo
+            setInterval(function() {
+                // Calcular el tiempo transcurrido en segundos
+                let tiempoTranscurrido = Math.floor((Date.now() - tiempoInicio) / 1000);
+
+                // Mostrar el contador de tiempo en la página
+                document.getElementById("contador-tiempo").textContent = tiempoTranscurrido + " segundos en la página";
+            }, 1000); // Actualizar cada segundo
+        });
+    </script>
+</body>
+</html>
